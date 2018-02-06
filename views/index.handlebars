@@ -1,0 +1,46 @@
+<h1 class="text-center header1">Burger Time!</h1>
+<div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 text-center">
+    <h2 class="header2">Burgers Hot and Ready!</h2>
+    <!-- <ul> -->
+      {{#each burgers}}
+        {{#unless devoured}}
+          <!-- <li> -->
+            <p>Order #{{this.id}}: {{this.burger_name}}<button class="eat-burger" data-id="{{this.id}}">Devour it!</button></p>
+          <!-- </li> -->
+        {{/unless}}
+      {{/each}}
+    <!-- </ul> -->
+  </div>
+  <dir class="col-md-4 text-center">
+    <img src="assets/images/burger.png" alt="burger image" width="350">
+  </dir>
+  <div class="col-md-4 text-center">
+    <h2 class="header2">Burgers Served!</h2>
+    <!-- <ul> -->
+      {{#each burgers}}
+        {{#if devoured}}
+          <!-- <li> -->
+            <p>Order #{{this.id}}: {{this.burger_name}}</p>
+          <!-- </li> -->
+        {{/if}}
+      {{/each}}
+    <!-- </ul> -->
+  </div>
+</div>
+
+<div class="text-center">
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="new-burger-name">Create a name for your burger:</label>
+    <input type="text" id="new-burger-name" name="burger">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+</div>
